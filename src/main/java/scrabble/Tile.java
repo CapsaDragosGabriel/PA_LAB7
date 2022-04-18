@@ -22,9 +22,13 @@ public class Tile {
 
     @Override
     public String toString() {
+
+        return "" + letter;
+    }
+    /*public String toString() {
         return "Tile{" +
                 "letter=" + letter +
                 ", points=" + points +
                 '}';
-    }
+    }*/
 }
