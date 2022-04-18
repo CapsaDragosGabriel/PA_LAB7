@@ -98,11 +98,14 @@ public class Bag {
     }
 
     public Tile getTileByLetter(char ch) {
+        /**
+         *merge prin tilePoints pana gaseste tile-ul care are caracterul ch
+         */
         return tilePoints.stream().filter(tile -> ch == tile.getLetter()).findFirst().orElse(null);
 
     }
 
-    public synchronized List<Tile> extractTiles(int howMany) {
+    synchronized public  List<Tile> extractTiles(int howMany) {
         List<Tile> extracted = new ArrayList<>();
         for (int i = 0; i < howMany; i++) {
             if (letters.isEmpty()) {
@@ -130,9 +133,7 @@ public class Bag {
 
     @Override
     public String toString() {
-        return "Bag{" +
-                "letters=" + letters +
-                '}';
+        return "Bag{" + "letters=" + letters + '}';
     }
 
     synchronized public void returnTiles(List<Tile> extracted) {

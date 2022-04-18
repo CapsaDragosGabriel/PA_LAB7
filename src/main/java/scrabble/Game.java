@@ -46,8 +46,6 @@ public class Game {
         int score = 0;
         for (int index = 0; index < word.length(); index++)
             score += bag.getTileByLetter(word.charAt(index)).getPoints();
-
-
         return score;
     }
 
@@ -78,8 +76,7 @@ public class Game {
 
     public void nextPlayer() {
         playerIndex++;
-        if (playerIndex == players.size())
-            playerIndex = 0;
+        if (playerIndex == players.size()) playerIndex = 0;
         currPlayer = players.get(playerIndex);
     }
 
